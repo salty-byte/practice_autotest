@@ -8,18 +8,9 @@ const styles = theme => ({
   }
 });
 
-const itemList = () => {
-  const data = require( "../resources/data.json" );
-  return ({
-    animals: data.animals,
-    categories: data.categories
-  });
-};
-
 class Home extends React.Component {
   render() {
     const { classes } = this.props;
-    const { animals, categories} = itemList();
     return (
       <div className={classes.root}>
         <h3>コース選択</h3>

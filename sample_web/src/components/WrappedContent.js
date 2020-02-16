@@ -17,11 +17,11 @@ const WrappedContent = (TargetComponent) => {
   const Content = class extends React.Component {
 
     render() {
-      const { classes } = this.props;
+      const { classes, ...props } = this.props;
       return (
         <Scrollbars>
           <div className={classes.wrapper}>
-            <TargetComponent />
+            <TargetComponent {...props}/>
           </div>
         </Scrollbars>
       );

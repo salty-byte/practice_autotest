@@ -2,9 +2,14 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MediaCard from '../components/MediaCard';
+import { parse } from 'query-string';
+import RedListSimpleSearchForm from '../components/RedListSimpleSearchForm';
 
 const styles = theme => ({
   root: {
+  },
+  resultContainer: {
+    marginTop: 10
   }
 });
 
@@ -16,24 +21,40 @@ const itemList = () => {
   });
 };
 
+const searchAnimals = (animals, id) => {
+  if(id === 0){
+    return animals;
+  }
+  return animals.filter(v => {
+    return v.category === id;
+  });
+};
+
 class RedListSearch extends React.Component {
   render() {
     const { classes } = this.props;
-    const { animals, categories} = itemList();
+    const query = parse(this.props.location.search);
+    const id = parseInt(query.category, 10);
+    const { animals, categories } = itemList();
+    const items = searchAnimals(animals, id);
+
     return (
       <div className={classes.root}>
         <h3>レッドリスト検索</h3>
-        <Grid container spacing={1}>
-          {animals.map(v => (
-            <Grid item xl={12} sm={6} md={4}>
-              <MediaCard
-                data = {{
-                  title: v.name,
-                  text: v.eng,
-                }}
-              />
-            </Grid>
-          ))}
+        <RedListSimpleSearchForm defaultCategory={id} categories={categories}/>
+        <Grid className={classes.resultContainer} container spacing={1}>
+          {
+            items.map(v => (
+              <Grid item xl={12} sm={6} md={4}>
+                <MediaCard
+                  data = {{
+                    title: v.name,
+                    text: v.eng,
+                  }}
+                />
+              </Grid>
+            ))
+          }
         </Grid>
       </div>
     );

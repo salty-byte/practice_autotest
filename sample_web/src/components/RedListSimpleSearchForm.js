@@ -2,65 +2,67 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles(theme => ({
   button: {
-    margin: theme.spacing(1),
+    marginTop: 10,
+    marginLeft: 10
   },
-  textField: {
-    margin: theme.spacing(1),
+  formControl: {
+    minWidth: 250
   },
 }));
 
-const RedListSimpleSearchForm = ({
-  values = {
-    title: "",
-  },
-  errors,
-  touched
-}) => {
-  const [age, setAge] = React.useState('');
+const RedListSimpleSearchForm = (data) => {
   const classes = useStyles();
+  const [state, setState] = React.useState({
+    'category': data.defaultCategory
+  });
 
-  const inputLabel = React.useRef(null);
-  const [labelWidth, setLabelWidth] = React.useState(0);
-
-  const handleChange = event => {
-    setAge(event.target.value);
+  const handleChange = name => event => {
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
   };
 
+  const handleSubmit = event => {
+    // TODO validation
+  }
+
   return (
-    <div>
-      <div>
+    <form onSubmit={handleSubmit}>
+      <FormControl className={classes.formControl}>
+        <InputLabel id="category-label">カテゴリ</InputLabel>
         <Select
-          value={age}
-          onChange={handleChange}
-          displayEmpty
-          className={classes.selectEmpty}
+          labelId="category-label"
+          name="category"
+          value={state.category}
+          onChange={handleChange("category")}
+          autoWidth
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value="0"><em>すべて</em></MenuItem>
+          {
+            data.categories.map(v => (
+              <MenuItem value={v.id}>{v.name}</MenuItem>
+            ))
+          }
         </Select>
-        <FormHelperText>Label + placeholder</FormHelperText>
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          size="large"
-          className={classes.button}
-          startIcon={<SearchIcon />}
-        >
-          検索
-        </Button>
-      </div>
-    </div>
+      </FormControl>
+      <Button
+        type="submit"
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        startIcon={<SearchIcon />}
+      >
+        検索
+      </Button>
+    </form>
   )
 }
 
