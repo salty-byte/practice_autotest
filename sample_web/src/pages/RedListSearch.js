@@ -25,10 +25,12 @@ const searchAnimals = (animals, id) => {
   if(id === 0){
     return animals;
   }
-  return animals.filter(v => {
-    return v.category === id;
-  });
+  return animals.filter(v => v.category === id);
 };
+
+const getCategory = (categories, id) => {
+  return categories.find(v => v.id === id);
+}
 
 class RedListSearch extends React.Component {
   render() {
@@ -50,6 +52,7 @@ class RedListSearch extends React.Component {
                   data = {{
                     title: v.name,
                     text: v.eng,
+                    category: getCategory(categories, v.category)
                   }}
                 />
               </Grid>

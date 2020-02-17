@@ -1,4 +1,5 @@
 import React from 'react';
+import Chip from '@material-ui/core/Chip';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -9,13 +10,19 @@ import Typography from '@material-ui/core/Typography';
 const MediaCard = ({
   data = {
     title: "Title",
-    text: "Text"
+    text: "Text",
+    category: {name: "", color: ""}
   }
 }) => {
   return (
     <Card>
       <CardActionArea>
         <CardContent>
+          <Chip
+            size="small"
+            label={data.category.name}
+            style={{color: data.category.color}}
+          />
           <Typography gutterBottom variant="h6">
             {data.title}
           </Typography>
