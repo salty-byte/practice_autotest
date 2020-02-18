@@ -19,14 +19,22 @@ const MediaCard = ({
       <CardActionArea>
         <CardContent>
           <Chip
+            variant="outlined"
             size="small"
             label={data.category.name}
-            style={{color: data.category.color}}
+            style={{
+              color: data.category.color,
+              borderColor: data.category.color
+            }}
           />
           <Typography gutterBottom variant="h6">
             {data.title}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
             {data.text}
           </Typography>
         </CardContent>
