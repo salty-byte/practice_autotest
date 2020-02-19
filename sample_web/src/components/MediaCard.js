@@ -54,6 +54,8 @@ const MediaCard = (props) => {
         <Button
           size="small"
           color="primary"
+          href={`https://www.google.com/search?q=${data.name}`}
+          target="_blank"
         >
           Google検索
         </Button>
