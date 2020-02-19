@@ -50,8 +50,8 @@ class RedListSearch extends React.Component {
               <Grid item xl={12} sm={6} md={4}>
                 <MediaCard
                   data = {{
-                    title: v.name,
-                    text: v.eng,
+                    name: v.name,
+                    eng: v.eng,
                     category: getCategory(categories, v.category)
                   }}
                 />

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
 import Card from '@material-ui/core/Card';
@@ -15,32 +17,33 @@ const useStyles = makeStyles({
   }
 });
 
-const MediaCard = ({
-  data = {
-    title: "Title",
-    text: "Text",
-    category: {name: "", color: ""}
-  }
-}) => {
+const MediaCard = (props) => {
   const classes = useStyles();
+  const data = props.data;
+
+  const searchCategory = (id) => {
+    props.history.push(`/red-list-search?category=${id}`);
+  };
+
   return (
     <Card>
       <CardActionArea>
         <CardContent>
           <Typography variant="h6">
-            {data.title}
+            {data.name}
           </Typography>
           <Typography
             variant="body2"
             color="textSecondary"
           >
-            {data.text}
+            {data.eng}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.cardAction}>
         <Chip
           variant="outlined"
+          onClick={() => searchCategory(data.category.id)}
           size="small"
           label={data.category.name}
           style={{
@@ -59,4 +62,16 @@ const MediaCard = ({
   );
 };
 
-export default MediaCard;
+MediaCard.propTypes = {
+  data: {
+    name: PropTypes.string.isRequired,
+    eng: PropTypes.string.isRequired,
+    category: {
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      color: PropTypes.string.isRequired
+    }
+  }
+};
+
+export default withRouter(MediaCard);
