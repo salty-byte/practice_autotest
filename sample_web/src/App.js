@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import WrappedContent from './components/WrappedContent'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import MainFrame from './containers/MainFrame';
 import NotFound from './pages/NotFound';
@@ -14,7 +15,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App" >
+      <Router className="App">
         <MainFrame>
           <Switch>
             <Route exact path="/" component={WrappedContent(Home)} />
@@ -24,7 +25,7 @@ class App extends Component {
             <Route component={WrappedContent(NotFound)} />
           </Switch>
         </MainFrame>
-      </div>
+      </Router>
     );
   }
 }

@@ -65,15 +65,15 @@ const MediaCard = (props) => {
 };
 
 MediaCard.propTypes = {
-  data: {
+  data: PropTypes.shape({
     name: PropTypes.string.isRequired,
     eng: PropTypes.string.isRequired,
-    category: {
-      id: PropTypes.string.isRequired,
+    category: PropTypes.shape({
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       color: PropTypes.string.isRequired
-    }
-  }
+    })
+  })
 };
 
 export default withRouter(MediaCard);

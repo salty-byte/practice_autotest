@@ -48,7 +48,13 @@ const RedListSimpleSearchForm = (data) => {
           <MenuItem value="0"><em>すべて</em></MenuItem>
           {
             data.categories.map(v => (
-              <MenuItem value={v.id} style={{color:v.color}}>{v.name}</MenuItem>
+              <MenuItem
+                key={v.id}
+                value={v.id}
+                style={{color:v.color}}
+              >
+                {v.name}
+              </MenuItem>
             ))
           }
         </Select>

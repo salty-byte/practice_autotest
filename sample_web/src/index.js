@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
 
 import './index.css';
@@ -25,9 +24,7 @@ export const theme = createMuiTheme({
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>
-      <Router>
-        <App/>
-      </Router>
+      <App/>
     </MuiThemeProvider>
   , document.getElementById('root'));
 serviceWorker.unregister();
