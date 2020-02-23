@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 const RedListSimpleSearchForm = (data) => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    'category': data.defaultCategory
+    'category': data.defaultCategory || 0
   });
 
   const handleChange = name => event => {

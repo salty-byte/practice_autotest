@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+import { parse } from 'query-string';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MediaCard from '../components/MediaCard';
-import { parse } from 'query-string';
 import RedListSimpleSearchForm from '../components/RedListSimpleSearchForm';
 
 const styles = theme => ({
@@ -64,4 +65,6 @@ class RedListSearch extends React.Component {
   }
 }
 
-export default withStyles(styles)(RedListSearch);
+export default withStyles(styles)(
+  withRouter(RedListSearch)
+);
