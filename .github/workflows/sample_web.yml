@@ -29,4 +29,6 @@ jobs:
       run: |
         pwd
         ls
+        cd sample_web
+        ls
         npm run deploy
