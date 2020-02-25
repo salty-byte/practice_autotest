@@ -1,16 +1,16 @@
-name: Node.js CI
+name: sample_web CI
 
-on: [push]
+on:
+  push:
+    paths:
+    - 'sample_web/**'
 
 jobs:
   build-sample-web:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
-
+        node-version: [12.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -25,3 +25,5 @@ jobs:
         npm test
       env:
         CI: true
+    - name: deploy GitHub Pages
+      run: npm run deploy
