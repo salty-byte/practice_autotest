@@ -18,17 +18,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build and test for sample_web
+      working-directory: ./sample_web
       run: |
-        cd sample_web
         npm install
         npm run build --if-present
         npm test
       env:
         CI: true
     - name: deploy GitHub Pages
+      if: success()
+      working-directory: ./sample_web
       run: |
-        pwd
-        ls
-        cd sample_web
-        ls
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         npm run deploy
