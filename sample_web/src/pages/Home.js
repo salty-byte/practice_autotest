@@ -20,7 +20,7 @@ class Home extends React.Component {
               data={{
                 title: "コース１：検索",
                 text: "レッドリスト検索",
-                img: "/static/img/red-list-search.jpg",
+                img: `${process.env.PUBLIC_URL}/static/img/red-list-search.jpg`,
                 to: "/red-list-search"
               }}
             />
