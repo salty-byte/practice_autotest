@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/practice_autotest/static/css/main.821e99de.chunk.css",
-    "main.js": "/practice_autotest/static/js/main.32d6e722.chunk.js",
-    "main.js.map": "/practice_autotest/static/js/main.32d6e722.chunk.js.map",
-    "runtime-main.js": "/practice_autotest/static/js/runtime-main.de3708f2.js",
-    "runtime-main.js.map": "/practice_autotest/static/js/runtime-main.de3708f2.js.map",
-    "static/js/2.6b6cac9f.chunk.js": "/practice_autotest/static/js/2.6b6cac9f.chunk.js",
-    "static/js/2.6b6cac9f.chunk.js.map": "/practice_autotest/static/js/2.6b6cac9f.chunk.js.map",
-    "index.html": "/practice_autotest/index.html",
-    "precache-manifest.a06bcde0b98956353e03588ffc0817a2.js": "/practice_autotest/precache-manifest.a06bcde0b98956353e03588ffc0817a2.js",
-    "service-worker.js": "/practice_autotest/service-worker.js",
-    "static/css/main.821e99de.chunk.css.map": "/practice_autotest/static/css/main.821e99de.chunk.css.map",
-    "static/js/2.6b6cac9f.chunk.js.LICENSE.txt": "/practice_autotest/static/js/2.6b6cac9f.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/practice_autotest/static/media/logo.9e79eff1.png"
+    "main.css": "./static/css/main.821e99de.chunk.css",
+    "main.js": "./static/js/main.57761aa2.chunk.js",
+    "main.js.map": "./static/js/main.57761aa2.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.17ddf6fe.js",
+    "runtime-main.js.map": "./static/js/runtime-main.17ddf6fe.js.map",
+    "static/js/2.6b6cac9f.chunk.js": "./static/js/2.6b6cac9f.chunk.js",
+    "static/js/2.6b6cac9f.chunk.js.map": "./static/js/2.6b6cac9f.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.26a1260fad8ab4577e4c2fd98078a33a.js": "./precache-manifest.26a1260fad8ab4577e4c2fd98078a33a.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.821e99de.chunk.css.map": "./static/css/main.821e99de.chunk.css.map",
+    "static/js/2.6b6cac9f.chunk.js.LICENSE.txt": "./static/js/2.6b6cac9f.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "./static/media/logo.9e79eff1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.de3708f2.js",
+    "static/js/runtime-main.17ddf6fe.js",
     "static/js/2.6b6cac9f.chunk.js",
     "static/css/main.821e99de.chunk.css",
-    "static/js/main.32d6e722.chunk.js"
+    "static/js/main.57761aa2.chunk.js"
   ]
 }
