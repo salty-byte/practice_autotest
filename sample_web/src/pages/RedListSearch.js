@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import { parse } from 'query-string';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import { Grid, Typography } from '@material-ui/core';
 import MediaCard from '../components/MediaCard';
 import RedListSimpleSearchForm from '../components/RedListSimpleSearchForm';
 
@@ -45,21 +45,30 @@ class RedListSearch extends React.Component {
       <div className={classes.root}>
         <h3>レッドリスト検索</h3>
         <RedListSimpleSearchForm defaultCategory={id} categories={categories}/>
-        <Grid className={classes.resultContainer} container spacing={1}>
-          {
-            items.map(v => (
-              <Grid key={v.id} item xs={12} sm={6} md={4}>
-                <MediaCard
-                  data = {{
-                    name: v.name,
-                    eng: v.eng,
-                    category: getCategory(categories, v.category)
-                  }}
-                />
+        {
+          items.length !== 0 && (
+            <Grid className={classes.resultContainer} container spacing={1}>
+              <Grid item xs={12}>
+                <Typography variant="body2" color="secondary">
+                  {items.length}件ヒット
+                </Typography>
               </Grid>
-            ))
-          }
-        </Grid>
+              {
+                items.map(v => (
+                  <Grid key={v.id} item xs={12} sm={6} md={4}>
+                    <MediaCard
+                      data = {{
+                        name: v.name,
+                        eng: v.eng,
+                        category: getCategory(categories, v.category)
+                      }}
+                      />
+                  </Grid>
+                ))
+              }
+            </Grid>
+          )
+        }
       </div>
     );
   }
