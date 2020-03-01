@@ -48,7 +48,7 @@ class RedListSearch extends React.Component {
         <Grid className={classes.resultContainer} container spacing={1}>
           {
             items.map(v => (
-              <Grid key={v.id} item xl={12} sm={6} md={4}>
+              <Grid key={v.id} item xs={12} sm={6} md={4}>
                 <MediaCard
                   data = {{
                     name: v.name,
