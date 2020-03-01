@@ -2,7 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import { parse } from 'query-string';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Tooltip, Zoom } from '@material-ui/core';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import MediaCard from '../components/MediaCard';
 import RedListSimpleSearchForm from '../components/RedListSimpleSearchForm';
 
@@ -11,6 +12,10 @@ const styles = theme => ({
   },
   resultContainer: {
     marginTop: 10
+  },
+  tooltip: {
+    marginleft: 10,
+    fontSize: 12
   }
 });
 
@@ -41,9 +46,27 @@ class RedListSearch extends React.Component {
     const { animals, categories } = itemList();
     const items = searchAnimals(animals, id);
 
+    const tootTipTitle = () => {
+      return (
+        <span className={classes.tooltip}>
+          レッドリストとは、絶滅のおそれのある野生生物の種のリストです。
+          この検索機能では、環境省が公開しているレッドリストから種別ごとに一覧を表示できます。<br />
+         【哺乳類】のみ対応しています。
+        </span>
+      )
+    }
+
     return (
       <div className={classes.root}>
-        <h3>レッドリスト検索</h3>
+        <h3>
+          レッドリスト検索
+          <Tooltip
+            TransitionComponent={Zoom}
+            title={tootTipTitle()}
+          >
+            <HelpOutlineIcon color="secondary" fontSize="small" />
+          </Tooltip>
+        </h3>
         <RedListSimpleSearchForm defaultCategory={id} categories={categories}/>
         {
           items.length !== 0 && (
