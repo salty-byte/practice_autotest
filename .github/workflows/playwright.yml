@@ -1,0 +1,34 @@
+name: playwright CI
+
+on:
+  push:
+    paths:
+    - 'sample_web/**'
+    - 'playwright/**'
+
+jobs:
+  build-sample-web:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build for sample_web
+      working-directory: ./sample_web
+      run: |
+        npm install
+        npm run build --if-present
+        npm run start
+    - name: npm install, build and test for sample_web with playwright
+      working-directory: ./playwright
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test
+      env:
+        CI: true
