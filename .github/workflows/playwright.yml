@@ -23,7 +23,7 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-        npm run start
+        npm run start&
     - name: npm install, build and test for sample_web with playwright
       working-directory: ./playwright
       run: |
