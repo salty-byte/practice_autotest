@@ -1,4 +1,4 @@
-sample_web ![sample_web](https://github.com/salty-byte/practice_autotest/workflows/sample_web%20CI/badge.svg)
+sample_web ![sample_web](https://github.com/salty-byte/practice_autotest/workflows/sample_web/badge.svg)
 ========
 A web application used as a test target.
 
@@ -28,7 +28,7 @@ $ npm run build
 $ npm run start
 ```
 
-## Licence
+## License
 
 [MIT](https://github.com/salty-byte/practice_autotest/blob/master/LICENSE)
 
