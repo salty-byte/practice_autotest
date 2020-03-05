@@ -1,6 +1,6 @@
-playwright demo ![playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright%20CI/badge.svg)
+Playwright demo ![Playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright/badge.svg)
 ========
-Tests for sample_web with playwright.
+Tests for sample_web with [Playwright](https://github.com/microsoft/playwright).
 
 ## Require
 
@@ -43,7 +43,7 @@ browser = await target.type.launch({
 });
 ```
 
-## Licence
+## License
 
 [MIT](https://github.com/salty-byte/practice_autotest/blob/master/LICENSE)
 
