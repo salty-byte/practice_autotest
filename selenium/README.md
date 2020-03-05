@@ -1,4 +1,4 @@
-selenium demo
+Selenium demo ![Selenium](https://github.com/salty-byte/practice_autotest/workflows/Selenium/badge.svg)
 ========
 Tests for sample_web with [Selenium](https://www.selenium.dev/).
 
@@ -35,7 +35,7 @@ $ npm run build
 $ npm run start
 ```
 
-2. Run tests in playwright directory
+2. Run tests in selenium directory
 ```sh
 $ npm test
 ```
@@ -53,7 +53,7 @@ driver = new Builder()
   .build();
 ```
 
-## Licence
+## License
 
 [MIT](https://github.com/salty-byte/practice_autotest/blob/master/LICENSE)
 
