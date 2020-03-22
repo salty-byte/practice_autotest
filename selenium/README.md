@@ -1,4 +1,4 @@
-Selenium demo ![Selenium](https://github.com/salty-byte/practice_autotest/workflows/Selenium/badge.svg)
+Selenium demo ![selenium](https://github.com/salty-byte/practice_autotest/workflows/selenium/badge.svg)
 ========
 Tests for sample_web with [Selenium](https://www.selenium.dev/).
 
