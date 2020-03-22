@@ -1,4 +1,4 @@
-import { Builder, Capabilities, WebDriver, By, WebElement } from 'selenium-webdriver';
+import { Builder, WebDriver, By, WebElement } from 'selenium-webdriver';
 import chrome from 'selenium-webdriver/chrome';
 import until from 'selenium-webdriver/lib/until';
 import chromedriver from 'chromedriver';

@@ -12,12 +12,12 @@ describe('テスト: コース１', function() {
 
   // テスト実施環境（ブラウザ）
   const targets = [
-    {'name': 'chromium', 'type': pw.chromium},
-    {'name': 'firefox', 'type': pw.firefox},
-    {'name': 'webkit', 'type': pw.webkit}
+    { 'name': 'chromium', 'type': pw.chromium },
+    { 'name': 'firefox', 'type': pw.firefox },
+    { 'name': 'webkit', 'type': pw.webkit }
   ];
 
-  for(const target of targets){
+  for (const target of targets) {
 
     // 結果出力先のディレクトリ
     const outPath = `${basePath}/${target.name}`;
@@ -93,7 +93,7 @@ describe('テスト: コース１', function() {
       });
 
       // テスト後処理
-      after (async function() {
+      after(async function() {
         await browser.close();
       });
     });
