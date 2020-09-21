@@ -2,9 +2,11 @@ name: playwright
 
 on:
   push:
-    paths:
-    - 'sample_web/**'
-    - 'playwright/**'
+    branches: 
+      - master
+  pull_request:
+    branches: 
+      - master
 
 jobs:
   build-sample-web:
