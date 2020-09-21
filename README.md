@@ -10,6 +10,9 @@ A test automation practice project.
 
 ```
 node: 12.x
+
+// for selenium tests
+chrome browser: latest
 ```
 
 ## Usage

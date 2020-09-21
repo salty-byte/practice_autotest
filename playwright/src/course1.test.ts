@@ -57,13 +57,18 @@ describe('テスト: コース１', function() {
           path: `${outPath}/course1.png`
         });
 
-        // ヘルプマークをマウスオーバーして、ツールチップを表示する
+        // ヘルプマークをマウスオーバー
         await page.hover('h3 > svg'); // css selector
-        await page.waitFor(1000); // FIXME 要素が出力されるまで待機する
-        const tooltip = await page.$eval('xpath=//div[@role="tooltip"]', (item: Element) => {
+
+        // ツールチップ要素が出力されるまで待機し、内容を確認
+        const tooltipSelector = 'xpath=//div[@role="tooltip"]';
+        await page.waitForSelector(tooltipSelector);
+        const tooltip = await page.$eval(tooltipSelector, (item: Element) => {
           return item.textContent || '';
         });
         assert.ok(tooltip.match(/^レッドリストとは/), 'ヘルプマークをマウスオーバーすると、ツールチップが表示されること');
+        
+        // ツールチップが表示されている画面をスクリーンショット
         await page.screenshot({
           path: `${outPath}/help_tooltip.png`
         });
@@ -71,14 +76,14 @@ describe('テスト: コース１', function() {
         // カテゴリ選択
         await page.click('#mui-component-select-category'); // css selector
         await page.click('text="絶滅"');
-        await page.waitFor(1000); // FIXME 選択した値を適用するために待機する
+        await page.waitForTimeout(1000); // 選択した値を適用するために待機する
 
         // 検索ボタン押下
         await page.click('xpath=//button/span[text()="検索"]'); // xpath
 
         // 検索結果が表示されるまで待機
         const hitSelector = '#root > div > main > div > div:nth-child(1) > div > div > div > div';
-        await page.waitFor(hitSelector);
+        await page.waitForSelector(hitSelector);
 
         // 検索結果画面をスクリーンショット
         await page.screenshot({

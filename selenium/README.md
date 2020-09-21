@@ -12,6 +12,7 @@ Tests for sample_web with [Selenium](https://www.selenium.dev/).
 
 ```
 node: 12.x
+chrome browser: latest
 ```
 
 ## Install

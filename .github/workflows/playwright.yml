@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-sample-web:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
         node-version: [12.x]
@@ -22,7 +22,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: install apt package for webkit
       run: |
-        sudo apt-get install libwoff1 libopus0 libwebp6 libwebpdemux2 libenchant1c2a libgudev-1.0-0 libsecret-1-0 libhyphen0 libgdk-pixbuf2.0-0 libegl1 libgles2 libevent-2.1-6 libnotify4 libxslt1.1 libevent-2.1-6 libgles2 libvpx5
+        sudo apt update
+        sudo apt-get install libwoff1 libopus0 libwebp6 libwebpdemux2 libenchant1c2a libgudev-1.0-0 libsecret-1-0 libhyphen0 libgdk-pixbuf2.0-0 libegl1 libgles2 libevent-2.1-6 libnotify4 libxslt1.1 gstreamer1.0-plugins-bad gstreamer1.0-libav
     - name: install apt package for chromium
       run: |
         sudo apt-get install libgbm1 -y

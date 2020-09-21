@@ -2,6 +2,12 @@ Playwright demo ![Playwright](https://github.com/salty-byte/practice_autotest/wo
 ========
 Tests for sample_web with [Playwright](https://github.com/microsoft/playwright).
 
+## Playwright information
+
+|Language|Version|
+|:---|:---|
+|TypeScript|1.4.1|
+
 ## Require
 
 ```
