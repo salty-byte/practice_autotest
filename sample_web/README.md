@@ -1,11 +1,11 @@
-sample_web ![sample_web](https://github.com/salty-byte/practice_autotest/workflows/sample_web/badge.svg)
-========
+# sample_web ![sample_web](https://github.com/salty-byte/practice_autotest/workflows/sample_web/badge.svg)
+
 A web application used as a test target.
 
 ## Require
 
 ```
-node: 12.x
+node: 14.x
 ```
 
 ## Install
