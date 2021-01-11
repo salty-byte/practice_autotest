@@ -1,17 +1,18 @@
-Playwright demo ![Playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright/badge.svg)
-========
+# Playwright demo ![Playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright/badge.svg)
+
 Tests for sample_web with [Playwright](https://github.com/microsoft/playwright).
 
 ## Playwright information
 
-|Language|Version|
-|:---|:---|
-|TypeScript|1.4.1|
+| Version |
+| :------ |
+| 1.7.1   |
 
 ## Require
 
 ```
-node: 12.x
+Ubuntu 20.04 LTS
+node: 14.x
 ```
 
 ## Install
@@ -31,11 +32,13 @@ $ npm run build
 ## Run
 
 1. Start web server in sample_web directory
+
 ```sh
 $ npm run start
 ```
 
 2. Run tests in playwright directory
+
 ```sh
 $ npm test
 ```
@@ -43,9 +46,10 @@ $ npm test
 ## Tips
 
 #### Run browser in non-headless mode
+
 ```typescript
 browser = await target.type.launch({
-  headless: false // default is true
+  headless: false, // default is true
 });
 ```
 
