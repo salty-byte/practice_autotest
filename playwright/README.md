@@ -1,4 +1,4 @@
-# Playwright demo ![Playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright/badge.svg)
+# Playwright sample ![Playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright/badge.svg)
 
 Tests for sample_web with [Playwright](https://github.com/microsoft/playwright).
 

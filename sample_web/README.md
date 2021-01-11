@@ -2,6 +2,10 @@
 
 A web application used as a test target.
 
+## Demo
+
+https://salty-byte.github.io/practice_autotest/
+
 ## Require
 
 ```

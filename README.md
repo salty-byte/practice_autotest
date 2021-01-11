@@ -4,7 +4,12 @@
 ![Selenium](https://github.com/salty-byte/practice_autotest/workflows/selenium/badge.svg)
 ![Playwright](https://github.com/salty-byte/practice_autotest/workflows/playwright/badge.svg)
 
-A test automation practice project.
+A test automation practice project.  
+Tests for sample_web with [Selenium](https://www.selenium.dev/) and [Playwright](https://github.com/microsoft/playwright).
+
+## Demo: sample_web
+
+https://salty-byte.github.io/practice_autotest/
 
 ## Require
 
@@ -21,35 +26,35 @@ chrome browser: latest
 1. Get resources
 
 ```sh
-$ git clone https://github.com/salty-byte/practice_autotest.git
+git clone https://github.com/salty-byte/practice_autotest.git
 ```
 
 2. Start web server in [sample_web](/sample_web/) directory
 
 ```sh
-$ cd sample_web
-$ npm install
-$ npm run start
+cd sample_web
+npm install
+npm run start
 ```
 
 3. Run tests:
 
-- [Selenium](/selenium/)
+- Selenium: [sample](/selenium/)
 
 ```sh
-$ cd selenium
-$ npm install
-$ npm run build
-$ npm test
+cd selenium
+npm install
+npm run build
+npm test
 ```
 
-- [Playwright](/playwright/)
+- Playwright: [sample](/playwright/)
 
 ```sh
-$ cd playwright
-$ npm install
-$ npm run build
-$ npm test
+cd playwright
+npm install
+npm run build
+npm test
 ```
 
 ## License
