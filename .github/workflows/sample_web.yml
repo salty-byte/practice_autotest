@@ -2,39 +2,39 @@ name: sample_web
 
 on:
   push:
-    branches: 
+    branches:
       - master
   pull_request:
-    branches: 
+    branches:
       - master
 
 jobs:
   build-sample-web:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build and test for sample_web
-      working-directory: ./sample_web
-      run: |
-        npm install
-        npm run build --if-present
-        npm test
-      env:
-        CI: true
-    - name: deploy GitHub Pages
-      if: ${{ success() && github.event_name == 'push' }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      working-directory: ./sample_web
-      run: |
-        git config --global user.email "action@example.com"
-        git config --global user.name "GitHub Action"
-        git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm run deploy
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build and test for sample_web
+        working-directory: ./sample_web
+        run: |
+          npm install
+          npm run build --if-present
+          npm test
+        env:
+          CI: true
+      - name: deploy GitHub Pages
+        if: ${{ success() && github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ./sample_web
+        run: |
+          git config --global user.email "action@example.com"
+          git config --global user.name "GitHub Action"
+          git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy
