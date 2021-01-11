@@ -5,6 +5,7 @@ A web application used as a test target.
 ## Require
 
 ```
+Ubuntu 20.04 LTS
 node: 14.x
 ```
 

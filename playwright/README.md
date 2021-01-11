@@ -11,6 +11,7 @@ Tests for sample_web with [Playwright](https://github.com/microsoft/playwright).
 ## Require
 
 ```
+Ubuntu 20.04 LTS
 node: 14.x
 ```
 
